@@ -26,7 +26,6 @@ export default {
     addMemo() {
       this.$emit('add', this.newMemo)
       this.addFlg = false
-      this.newMemo = '新規メモ'
     }
   }
 }
