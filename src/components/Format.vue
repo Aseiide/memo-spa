@@ -54,9 +54,7 @@ export default {
       }
       this.saveMemo()
     },
-    
-    transitionToEdit(...data) {
-      const [id, memo] = data
+    transitionToEdit(id, memo) {
       this.editFlg = true
       this.editingId = id
       this.editingMemo = memo
