@@ -5,7 +5,7 @@
     </div>
 
     <div v-if="addFlg" class="d-flex flex-row align-items-center">
-      <textarea v-model="newMemo" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="Add new..."></textarea>
+      <textarea v-model="newMemo" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="Add new memo"></textarea>
       <button @click="addMemo" type="button" class="btn btn-primary">Add</button>
     </div>
     <hr class="my-4">
@@ -17,7 +17,6 @@ export default {
   data() {
     return {
       addFlg: false,
-      newMemo: '新規メモ'
     }
   },
   methods: {
