@@ -22,7 +22,7 @@ export default {
       editNumber: 'editNumber',
       editFlg: false,
       editingId: null,
-      editngMemo: null
+      editingMemo: null
     }
   },
   
