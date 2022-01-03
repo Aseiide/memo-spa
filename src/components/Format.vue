@@ -67,7 +67,6 @@ export default {
       this.saveMemo()
       this.undo()
     },
-    
     removeMemo(id) {
       this.memos.splice(id, 1)
       this.saveMemo()
