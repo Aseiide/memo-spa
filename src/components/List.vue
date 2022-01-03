@@ -1,8 +1,8 @@
 <template>
   <div>
     <ul class="list-group">
-      <li v-for="(memo, i) in memos" :key="i" class="list-group-item">
-        <a class="memo-list" @click="transitionToEdit(i, memo)">
+      <li v-for="(memo, id) in memos" :key="id" class="list-group-item">
+        <a class="memo-list" @click="transitionToEdit(id, memo)">
           {{ splitOneLine(memo) }}
         </a>
       </li>
