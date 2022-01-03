@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       memos: [],
-      editNumber: 'editNumber',
+      editNumber: null,
       editFlg: false,
       editingId: null,
       editingMemo: null
@@ -47,7 +47,7 @@ export default {
       }
       if (!isNaN(this.editNumber)) {
         this.memos[this.editNumber] = content
-        this.editNumber = null
+        this.editNumber = editNumber
       }
       else {
         this.memos.push(content)
