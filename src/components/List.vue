@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list-group">
-      <li v-for="(memo, id) in memos" :key="id" class="list-group-item">
+      <li v-for="(memo, id) in memos" :key="memo.id" class="list-group-item">
         <a class="memo-list" @click="transitionToEdit(id, memo)">
           {{ splitOneLine(memo) }}
         </a>
@@ -15,7 +15,7 @@ export default {
   props: ['memos'],
   methods: {
     transitionToEdit (id, memo) {
-      this.$emit('transition', id, memo.content)
+      this.$emit('transition', id, memo)
     },
     splitOneLine (memo) {
       return memo.content.split('\n')[0]

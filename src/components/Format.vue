@@ -53,9 +53,8 @@ export default {
       this.editingId = id
       this.editingMemo = memo
     },
-    editMemo(id, text) {
-      const content = {id:this.$uuid.v4(), content: text}
-      this.memos.splice(id, 1, content)
+    editMemo(id, memo) {
+      this.memos.splice(id, 1, memo)
       this.saveMemo()
       this.undo()
     },

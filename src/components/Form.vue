@@ -1,7 +1,7 @@
 <template>
   <div class=form>
     <div class="d-flex flex-row align-items-center">
-      <textarea v-model="editingMemo" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="New change..."></textarea>
+      <textarea v-model="editingMemo.content" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="New change..."></textarea>
       <button type="button" class="btn btn-success ms-1" @click="editMemo">Update</button>
       <button type="button" class="btn btn-danger ms-1" @click="removeMemo">Delete</button>
     </div>
@@ -35,15 +35,6 @@ export default {
       this.editingMemo = null
     }
   },
-  
-  watch: {
-    id: function (newId) {
-      this.editingId = newId
-    },
-    memo: function (newMemo) {
-      this.editingMemo = newMemo
-    }
-  }
 }
 </script>
 
