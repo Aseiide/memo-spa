@@ -3,9 +3,9 @@
     <Add @add="addMemo"/>
     <List :memos="this.memos" @transition="transitionToEdit"/>
 
-    <Form v-if="editFlg"
+    <Form v-if="editingId !== null"
     :id="editingId"
-    :memo="editingMemo"
+    :memo="memos[this.editingId]"
     @editMemo="editMemo"
     @removeMemo="removeMemo"/>
   </div> 
@@ -19,9 +19,7 @@ export default {
   data() {
     return {
       memos: [],
-      editFlg: false,
       editingId: null,
-      editingMemo: null
     }
   },
   
@@ -48,10 +46,8 @@ export default {
       this.memos.push(content)
       this.saveMemo()
     },
-    transitionToEdit(id, memo) {
-      this.editFlg = true
+    transitionToEdit(id) {
       this.editingId = id
-      this.editingMemo = memo
     },
     editMemo(id, memo) {
       this.memos.splice(id, 1, memo)
@@ -67,9 +63,7 @@ export default {
       localStorage.setItem('memos', JSON.stringify(this.memos))
     },
     undo() {
-      this.editFlg = false
       this.editingId = null
-      this.editingMemo = null
     }
   }
 }
