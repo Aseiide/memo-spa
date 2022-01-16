@@ -45,7 +45,7 @@ export default {
       if (!content) {
         return
       }
-      if (!isNaN(this.editNumber)) {
+      if (this.editNumber) {
         this.memos[this.editNumber] = content
         this.editNumber = 'editNumber'
       }
