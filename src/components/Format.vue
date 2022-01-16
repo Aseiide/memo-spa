@@ -46,16 +46,16 @@ export default {
       this.memos.push(content)
       this.saveMemo()
     },
-    transitionToEdit(id) {
-      this.editingId = id
+    transitionToEdit(index) {
+      this.editingId = index
     },
-    editMemo(id, memo) {
-      this.memos.splice(id, 1, memo)
+    editMemo(index, memo) {
+      this.memos.splice(index, 1, memo)
       this.saveMemo()
       this.undo()
     },
-    removeMemo(id) {
-      this.memos.splice(id, 1)
+    removeMemo(index) {
+      this.memos.splice(index, 1)
       this.saveMemo()
       this.undo()
     },
