@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       memos: [],
-      editNumber: null,
       editFlg: false,
       editingId: null,
       editingMemo: null
@@ -41,17 +40,12 @@ export default {
     }
   },
   methods: {
-    addMemo(content) {
-      if (!content) {
+    addMemo(text) {
+      if (!text) {
         return
       }
-      if (this.editNumber) {
-        this.memos[this.editNumber] = content
-        this.editNumber = 'editNumber'
-      }
-      else {
-        this.memos.push(content)
-      }
+      const content = {id:this.$uuid.v4(), content: text}
+      this.memos.push(content)
       this.saveMemo()
     },
     transitionToEdit(id, memo) {
@@ -59,8 +53,9 @@ export default {
       this.editingId = id
       this.editingMemo = memo
     },
-    editMemo(id, memo) {
-      this.memos.splice(id, 1, memo)
+    editMemo(id, text) {
+      const content = {id:this.$uuid.v4(), content: text}
+      this.memos.splice(id, 1, content)
       this.saveMemo()
       this.undo()
     },

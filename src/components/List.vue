@@ -15,10 +15,10 @@ export default {
   props: ['memos'],
   methods: {
     transitionToEdit (id, memo) {
-      this.$emit('transition', id, memo)
+      this.$emit('transition', id, memo.content)
     },
     splitOneLine (memo) {
-      return memo.split('\n')[0]
+      return memo.content.split('\n')[0]
     } 
   }
   
